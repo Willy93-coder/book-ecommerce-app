@@ -5,3 +5,9 @@
 ### Added
 
 - Creation navbar component.
+
+## [1.0.0] - 2023-04-10
+
+### Added
+
+- Creation Registration form component.
