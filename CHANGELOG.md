@@ -1,10 +1,16 @@
 # Change Log
 
-## [1.5.0] - 2023-04-15
+## [1.6.0] - 2023-04-15
 
 ### Added
 
-- Creation Password change component
+- Creation of password change component
+
+## [1.5.0] - 2023-04-12
+
+### Added
+
+- Creation of product buttons
 
 ## [1.4.0] - 2023-04-12
 
