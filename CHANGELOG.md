@@ -1,6 +1,12 @@
 # Change Log
 
-## [1.5.0] - 2024-04-12
+## [1.6.0] - 2023-04-15
+
+### Added
+
+- Creation of password change component
+
+## [1.5.0] - 2023-04-12
 
 ### Added
 
