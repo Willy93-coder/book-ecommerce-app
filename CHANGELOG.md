@@ -1,4 +1,11 @@
 # Change Log
+
+## [1.5.0] - 2024-04-12
+
+### Added
+
+- Creation of product buttons
+
 ## [1.4.0] - 2023-04-12
 
 ### Added
