@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.8.0] - 2023-04-15
+
+### Added
+
+- Creation book component for landing page.
+
 ## [1.7.0] - 2023-04-15
 
 ### Added
