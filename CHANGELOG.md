@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.9.0] - 2023-04-15
+
+### Added
+
+- Creation book product component for product page.
+
 ## [1.8.0] - 2023-04-15
 
 ### Added
