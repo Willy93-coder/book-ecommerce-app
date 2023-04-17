@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         registrarse() {
-            fetch('/registro', {
+            fetch('/registration', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
