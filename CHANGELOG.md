@@ -1,5 +1,17 @@
 # Change Log
 
+## [1.11.0] - 2023-04-17
+
+### Added
+
+- Root of Login page
+
+## [1.10.0] - 2023-04-16
+
+### Added
+
+- Root of Home page
+
 ## [1.9.0] - 2023-04-15
 
 ### Added
