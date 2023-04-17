@@ -17,7 +17,7 @@
         data: () => ({
             items: [
                 { title: "Iniciar sesión", url: "/login" },
-                { title: "Registrarse" },
+                { title: "Registrarse", url:"/register" },
             ]
         }),
 

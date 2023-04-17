@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.12.0] - 2023-04-17
+
+### Added
+
+- Root of Register page
+
 ## [1.11.0] - 2023-04-17
 
 ### Added
