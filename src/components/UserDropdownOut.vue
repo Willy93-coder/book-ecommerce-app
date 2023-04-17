@@ -1,21 +1,12 @@
 <template>
-    <v-menu
-        open-on-hover
-    >
+    <v-menu open-on-hover>
         <template v-slot:activator="{ props }">
-            <v-btn
-                variant="plain"
-                v-bind="props"
-                icon="person" 
-            />
+            <v-btn variant="plain" v-bind="props" icon="person" />
         </template>
 
         <v-list variant="plain">
-            <v-list-item
-                v-for="(item, index) in items"
-                :key="index"
-            >
-                <v-btn class="text-capitalize" variant="plain">{{ item.title }}</v-btn>
+            <v-list-item v-for="(item, index) in items" :key="index">
+                <v-btn class="text-capitalize" variant="plain" @click="insertRoute(item.url)">{{ item.title }}</v-btn>
             </v-list-item>
         </v-list>
     </v-menu>
@@ -23,11 +14,17 @@
 
 <script>
     export default {
-        data:() => ({
+        data: () => ({
             items: [
-                {title: "Iniciar sesión"},
-                {title: "Registrarse"},
+                { title: "Iniciar sesión", url: "/login" },
+                { title: "Registrarse" },
             ]
-        })
+        }),
+
+        methods: {
+            insertRoute(route) {
+                this.$router.push(route);
+            }
+        }
     }
 </script>
