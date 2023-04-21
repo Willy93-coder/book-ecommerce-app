@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.15.1] - 2023-04-21
+
+### Added
+
+- Password change view
+
 ## [1.14.1] - 2023-04-21
 
 ### Added
