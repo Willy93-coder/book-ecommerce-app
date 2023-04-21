@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.14.1] - 2023-04-21
+
+### Added
+
+- Profile page view
+
 ## [1.13.1] - 2023-04-21
 
 ### Fix
