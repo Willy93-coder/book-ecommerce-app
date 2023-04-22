@@ -1,0 +1,47 @@
+{
+    "books": [
+    {
+        "id": 1,
+        "title": "Ejemplo de portadas",
+        "img": "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
+        "author": "Sergio Folgueras",
+        "price": "25,4€",
+        "description": "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
+    {
+        "id": 2,
+        "title": "Ejemplo de portadas",
+        "img": "https://gtechdesign.net/images/articu-2/portada-libro-3.jpg",
+        "author": "Sergio Folgueras",
+        "price": "25,4€",
+        "description": "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
+    {
+        "id": 3,
+        "title": "Ejemplo de portadas",
+        "img": "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
+        "author": "Sergio Folgueras",
+        "price": "25,4€",
+        "description": "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
+    {
+        "id": 4,
+        "title": "Ejemplo de portadas",
+        "img": "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
+        "author": "Sergio Folgueras",
+        "price": "25,4€",
+        "description": "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
+    {
+        "id": 5,
+        "title": "Ejemplo de portadas",
+        "img": "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
+        "author":"Sergio Folgueras",
+        "price": "25,4€",
+        "description": "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
+    {
+        "id": 6,
+        "title": "Ejemplo de portadas",
+        "img": "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
+        "author":"Sergio Folgueras",
+        "price": "25,4€",
+        "description": "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."
+    }
+    ]
+}
