@@ -1,5 +1,20 @@
 # Change Log
 
+## [1.16.0] - 2023-04-22
+
+### Added
+
+- Json file mock up api
+- Book detail view
+- Conditional rendering of the component Product2Buttons in AddToCart component
+- Dynamic route with id in BookComponent
+- Book rendering according to id in BookProductComponent
+
+### Changed
+
+- Delete props in BookDetailView in index.js
+- Layout and routes in Product2Buttons
+
 ## [1.15.1] - 2023-04-21
 
 ### Added

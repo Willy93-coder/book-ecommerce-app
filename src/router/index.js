@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import LoginView from '../views/LoginView.vue'
-import RegistrationView from '../views/RegistrationView.vue'
-import ProfilePageView from '../views/ProfilePageView.vue'
-import PasswordChange from '../views/PasswordChangeView.vue'
+import LoginView from '../views/LoginView.vue';
+import RegistrationView from '../views/RegistrationView.vue';
+import ProfilePageView from '../views/ProfilePageView.vue';
+import BookDetailView from '../views/BookDetailView.vue';
+import PasswordChange from '../views/PasswordChangeView.vue';
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,17 +18,22 @@ const router = createRouter({
         {
             path: '/login',
             name: 'login',
-            component: LoginView
+            component: LoginView,
         },
         {
             path: '/register',
-            name: 'register', 
-            component: RegistrationView
+            name: 'register',
+            component: RegistrationView,
         },
         {
             path: '/profile',
             name: 'profile',
-            component: ProfilePageView
+            component: ProfilePageView,
+        },
+        {
+            path: '/book/:id',
+            name: 'book',
+            component: BookDetailView,
         },
         {
             path: '/passwordchange',

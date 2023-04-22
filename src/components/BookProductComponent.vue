@@ -1,10 +1,10 @@
 <template>
     <v-container class="d-flex justify-center align-center" style="max-width: 64rem; min-height: 100vh;">
         <!-- Contenedor del card -->
-        <div v-for="data in book" :key="data.id" class="d-flex" style=" column-gap: 2rem;">
+        <div :key="book.id" class="d-flex" style=" column-gap: 2rem;">
             <!-- Portada libro -->
             <v-img 
-                :src="data.img"
+                :src="book.img"
                 height="25rem"
                 width="15.625rem"
                 cover>
@@ -13,11 +13,11 @@
             <div>
                 <div>
                     <!-- Título -->
-                    <p class="text-uppercase text-h5 font-weight-bold mb-2 ">{{ data.title }}</p>
+                    <p class="text-uppercase text-h5 font-weight-bold mb-2 ">{{ book.title }}</p>
                     <!-- Autor -->
-                    <p class="text-uppercase text-h6 mb-2 ">{{ data.author }}</p>
+                    <p class="text-uppercase text-h6 mb-2 ">{{ book.author }}</p>
                     <!-- Resumen -->
-                    <p>{{ data.description }}</p>
+                    <p>{{ book.description }}</p>
                 </div>
             </div>
             <!-- Divider -->
@@ -25,7 +25,7 @@
             <!-- Contenedor precio -->
             <div>
                 <!-- Precio -->
-                <p class="text-h4 font-weight-bold">{{ data.price }}</p>
+                <p class="text-h4 font-weight-bold">{{ book.price }}</p>
                     <AddToCart />
             </div>
         </div>
@@ -33,20 +33,18 @@
 </template>
 <script>
     import AddToCart from './AddToCart.vue'
+    import bookData from '../data.json'
     export default {
         components: {
             AddToCart
         },
-        data:() => ({
-            book: [
-                {
-                    id: 1,
-                    title: "Ejemplo de portadas",
-                    img: "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
-                    author: "Sergio Folgueras",
-                    price: "25,4€",
-                    description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."}
-            ]
-        })
+        computed: {
+            bookId() {
+                return parseInt(this.$route.params.id)
+            },
+            book() {
+                return bookData.books.find(book => book.id === this.bookId)
+            }
+        }
     }
 </script>
