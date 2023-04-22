@@ -5,7 +5,7 @@ import RegistrationView from '../views/RegistrationView.vue';
 import ProfilePageView from '../views/ProfilePageView.vue';
 import BookDetailView from '../views/BookDetailView.vue';
 import PasswordChange from '../views/PasswordChangeView.vue';
-
+import PageNotFoundView from '../views/PageNotFoundView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -38,7 +38,12 @@ const router = createRouter({
         {
             path: '/passwordchange',
             name: 'passwordchange',
-            component: PasswordChange
+            component: PasswordChange,
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'PageNotFound',
+            component: PageNotFoundView,
         },
     ],
 });
