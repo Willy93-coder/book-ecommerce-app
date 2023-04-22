@@ -27,7 +27,7 @@
             <div class="mx-4 mb-4 d-flex justify-space-between align-center">
                 <!-- Precio -->
                 <p class="text-red-accent-4 font-weight-bold text-h6">{{ book.price }}</p>
-                <v-btn class="text-black" variant="plain">Ver ficha</v-btn>
+                <v-btn class="text-black" variant="plain" @click="insertRoute(book.id)">Ver ficha</v-btn>
             </div>
         </v-card>
     </v-container>
@@ -47,7 +47,7 @@ export default {
                 {
                     id: 2,
                     title: "Ejemplo de portadas",
-                    img: "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
+                    img: "https://gtechdesign.net/images/articu-2/portada-libro-3.jpg",
                     author: "Sergio Folgueras",
                     price: "25,4€",
                     description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
@@ -81,7 +81,12 @@ export default {
                     description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."
                 }
             ]
-        })
+        }),
+        methods: {
+            insertRoute(id){
+                this.$router.push(`book/${id}`);
+            }
+        }
     }
 </script>
 
