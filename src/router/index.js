@@ -4,6 +4,8 @@ import LoginView from '../views/LoginView.vue';
 import RegistrationView from '../views/RegistrationView.vue';
 import ProfilePageView from '../views/ProfilePageView.vue';
 import BookDetailView from '../views/BookDetailView.vue';
+import PasswordChange from '../views/PasswordChangeView.vue';
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -32,6 +34,11 @@ const router = createRouter({
             path: '/book/:id',
             name: 'book',
             component: BookDetailView,
+        },
+        {
+            path: '/passwordchange',
+            name: 'passwordchange',
+            component: PasswordChange
         },
     ],
 });

@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.15.0] - 2023-04-22
+## [1.16.0] - 2023-04-22
 
 ### Added
 
@@ -14,6 +14,12 @@
 
 - Delete props in BookDetailView in index.js
 - Layout and routes in Product2Buttons
+
+## [1.15.1] - 2023-04-21
+
+### Added
+
+- Password change view
 
 ## [1.14.1] - 2023-04-21
 
