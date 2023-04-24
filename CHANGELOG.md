@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.17.0] - 2023-04-24
+
+### Added
+
+- Cart view
+- Cart view route in index.js
+
+### Changed
+
+- Button color primary in EmptyCart
+
 ## [1.16.0] - 2023-04-22
 
 ### Added
@@ -15,13 +26,13 @@
 - Delete props in BookDetailView in index.js
 - Layout and routes in Product2Buttons
 
-## [1.15.1] - 2023-04-21
+## [1.15.0] - 2023-04-21
 
 ### Added
 
 - Password change view
 
-## [1.14.1] - 2023-04-21
+## [1.14.0] - 2023-04-21
 
 ### Added
 
