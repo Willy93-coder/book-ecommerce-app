@@ -6,6 +6,7 @@ import ProfilePageView from '../views/ProfilePageView.vue';
 import BookDetailView from '../views/BookDetailView.vue';
 import PasswordChange from '../views/PasswordChangeView.vue';
 import PageNotFoundView from '../views/PageNotFoundView.vue';
+import CartView from '../views/CartView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -44,6 +45,11 @@ const router = createRouter({
             path: '/:pathMatch(.*)*',
             name: 'PageNotFound',
             component: PageNotFoundView,
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            component: CartView,
         },
     ],
 });
