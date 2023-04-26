@@ -1,5 +1,5 @@
 <template>
-    <v-container class="d-flex flex-column justify-center align-center" style="max-width: 64rem;">
+    <v-container class="d-flex flex-column justify-center align-center" style="max-width: 64rem; min-height: 100vh;">
         <h1 style="margin-bottom: 2rem; text-align: center;">Registro de usuario</h1>
         <div style="min-width: 20rem">
             <v-form @submit.prevent="registrarse">
@@ -7,7 +7,7 @@
                 <v-text-field v-model="email" label="Email" type="email" required></v-text-field>
                 <v-text-field v-model="password" label="Contraseña" type="password" required></v-text-field>
                 <v-container style="text-align: center;">
-                    <v-btn type="submit">Registrarse</v-btn>
+                    <v-btn type="submit" color="primary">Registrarse</v-btn>
                     <v-container>
                         {{ mensaje }}
                     </v-container>    

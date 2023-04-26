@@ -2,7 +2,7 @@
     <footer class="bg-teal-darken-1" >
         <v-container class="d-flex justify-space-between" style="max-width: 64rem;padding: 2rem 1rem;">
             <!-- Nosotros -->
-            <div class="f-basis">
+            <div class="f-basis" id="aboutUs">
                 <h5 class="font-weight-bold mb-2">¿Quienes somos?</h5>
                 <!-- Descripción -->
                 <p class="text-caption font-weight-regular">Somos un equipo apasionado y amantes de los libros que un día decidimos crear una tienda única en Palma de Mallorca. Compartimos amor por la lectura y creemos firmemente en el poder de los libros para enriquecer la vida de las personas y la sociedad en general. Como equipo, estamos comprometidos en crear una tienda que ofrezca una amplia variedad de títulos para todo tipo de lector, y brindar una experiencia de compra personalizada y agradable a cada cliente que entra en nuestra tienda.</p>
