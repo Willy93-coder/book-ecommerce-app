@@ -1,5 +1,5 @@
 <template>
-    <v-container class="d-flex flex-column justify-center align-center" style="max-width: 64rem;">
+    <v-container class="d-flex flex-column justify-center align-center" style="max-width: 64rem; min-height: 100vh;">
         <!-- Título -->
         <h1 style="margin-bottom: 2rem; text-align: center;">Inicio de sesión</h1>
         <!-- Login Container -->
@@ -15,7 +15,7 @@
                 <!-- Button Container -->
                 <v-container style="text-align: center; margin-top: 1rem;">
                     <!-- Button Login -->
-                    <v-btn type="submit">Iniciar sesión</v-btn>
+                    <v-btn type="submit" color="primary">Iniciar sesión</v-btn>
                     <!-- Message -->
                     <v-container>
                         {{ mensaje }}

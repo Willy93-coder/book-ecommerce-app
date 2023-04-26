@@ -2,7 +2,7 @@
     <v-app-bar elevation="1">
         <v-container class="d-flex align-center" style="max-width: 64rem;">
             <!-- Logo -->
-            <v-btn class="font-weight-black" variant="plain" @click="insertRoute('/')">D-Bks</v-btn>
+            <v-btn class="font-weight-black" variant="plain" @click="insertRoute('/')" color="primary">D-Bks</v-btn>
             <!-- Link Inicio -->
             <v-btn class="text-capitalize" variant="plain" @click="insertRoute('/')">Inicio</v-btn>
             <!-- Dropdown Libros -->
@@ -14,7 +14,7 @@
             <!-- Dropdown login -->
             <UserDropdownOut />
             <!-- Link Carrito -->
-            <v-btn variant="plain" icon="shopping_cart" @click="insertRoute('/cart')"></v-btn>
+            <v-btn variant="plain" icon="shopping_cart" ></v-btn>
         </v-container>
     </v-app-bar>
 </template>
