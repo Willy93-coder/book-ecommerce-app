@@ -7,26 +7,26 @@
         :key="book.id">
         <!-- Portada libro -->
             <v-img 
-            :src="book.img"
+            :src="book.imagen"
             height="12.5rem"
             class="mt-4"
             ></v-img>
             <!-- Título libro -->
             <v-card-title>
-                {{ book.title }}
+                {{ book.titulo }}
             </v-card-title>
             <!-- Autor -->
             <v-card-subtitle class="mb-1">
-                {{ book.author }}
+                {{ book.autor }}
             </v-card-subtitle>
             <v-divider class="mx-3"></v-divider>
             <!-- Descripción -->
             <v-card-text>
-                {{ book.description }}
+                {{ book.descripcion }}
             </v-card-text>
             <div class="mx-4 mb-4 d-flex justify-space-between align-center">
                 <!-- Precio -->
-                <p class="text-red-accent-4 font-weight-bold text-h6">{{ book.price }}</p>
+                <p class="text-red-accent-4 font-weight-bold text-h6">{{ book.precio_unitario }}</p>
                 <v-btn class="text-black" variant="plain" @click="insertRoute(book.id)">Ver ficha</v-btn>
             </div>
         </v-card>
@@ -35,57 +35,25 @@
 
 <script>
 export default {
-        data:() => ({
-            books: [
-                {
-                    id: 1,
-                    title: "Ejemplo de portadas",
-                    img: "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
-                    author: "Sergio Folgueras",
-                    price: "25,4€",
-                    description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
-                {
-                    id: 2,
-                    title: "Ejemplo de portadas",
-                    img: "https://gtechdesign.net/images/articu-2/portada-libro-3.jpg",
-                    author: "Sergio Folgueras",
-                    price: "25,4€",
-                    description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
-                {
-                    id: 3,
-                    title: "Ejemplo de portadas",
-                    img: "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
-                    author: "Sergio Folgueras",
-                    price: "25,4€",
-                    description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
-                {
-                    id: 4,
-                    title: "Ejemplo de portadas",
-                    img: "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
-                    author: "Sergio Folgueras",
-                    price: "25,4€",
-                    description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
-                {
-                    id: 5,
-                    title: "Ejemplo de portadas",
-                    img: "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
-                    author:"Sergio Folgueras",
-                    price: "25,4€",
-                    description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."},
-                {
-                    id: 6,
-                    title: "Ejemplo de portadas",
-                    img: "https://portadascreativas.com/wp-content/uploads/4-13.jpg",
-                    author:"Sergio Folgueras",
-                    price: "25,4€",
-                    description: "Este libro es un ejemplo de como tendría que ser una portada de un libro escrito por S. Folgueras, un master del Front-End."
-                }
-            ]
-        }),
+        data() {
+            return {
+                books: null
+            }
+        },
         methods: {
             insertRoute(id){
                 this.$router.push(`book/${id}`);
+            },
+            async dataBookFetch() {
+                const bookFetch = await fetch('127.0.0.1:8000/libro/');
+                const res = bookFetch.json();
+                const books = res.results;
+                console.log(`⛑ ${res}`);
+                this.books = books;
             }
+        },
+        async mounted() {
+            this.books = await this.dataBookFetch('127.0.0.1:8000/libro/');
         }
     }
 </script>
