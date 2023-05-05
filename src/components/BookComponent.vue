@@ -26,7 +26,7 @@
             </v-card-text>
             <div class="mx-4 mb-4 d-flex justify-space-between align-center">
                 <!-- Precio -->
-                <p class="text-red-accent-4 font-weight-bold text-h6">{{ book.precio_unitario }}</p>
+                <p class="text-red-accent-4 font-weight-bold text-h6">{{ book.precio_unitario }} €</p>
                 <v-btn class="text-black" variant="plain" @click="insertRoute(book.id)">Ver ficha</v-btn>
             </div>
         </v-card>
@@ -45,11 +45,10 @@ export default {
                 this.$router.push(`book/${id}`);
             },
             async dataBookFetch() {
-                const bookFetch = await fetch('127.0.0.1:8000/libro/');
-                const res = bookFetch.json();
-                const books = res.results;
-                console.log(`⛑ ${res}`);
-                this.books = books;
+                const bookFetch = await fetch('http://127.0.0.1:8000/libro/');
+                const res = await bookFetch.json();
+                this.books = res.results;
+                return this.books;
             }
         },
         async mounted() {
