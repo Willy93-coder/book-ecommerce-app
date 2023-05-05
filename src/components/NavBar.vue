@@ -14,7 +14,7 @@
             <!-- Dropdown login -->
             <UserDropdownOut />
             <!-- Link Carrito -->
-            <v-btn variant="plain" icon="shopping_cart" ></v-btn>
+            <v-btn variant="plain" icon="shopping_cart" @click="insertRoute('/cart')"></v-btn>
         </v-container>
     </v-app-bar>
 </template>
