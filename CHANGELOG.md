@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.18.0] - 2023-05-07
+
+### Added
+
+- Fetch from all books
+- Fetch from detail book
+
 ## [1.17.0] - 2023-04-24
 
 ### Added
