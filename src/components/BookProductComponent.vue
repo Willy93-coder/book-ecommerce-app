@@ -45,7 +45,7 @@
         async created() {
             const bookId = this.$route.params.id
             try {
-                const bookFetch = await fetch(`http://127.0.0.1:8000/libro/${bookId}`);
+                const bookFetch = await fetch(`http://127.0.0.1:8000/libro/${bookId}/`);
                     const res = await bookFetch.json();
                     this.book = res
             } catch (error) {
