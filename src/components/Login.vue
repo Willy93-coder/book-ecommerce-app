@@ -11,7 +11,7 @@
                 <!-- Password label -->
                 <v-text-field v-model="password" label="Contraseña" type="password" required></v-text-field>
                 <!-- Link register -->
-                <a href="/register" class="text-subtitle-1">¿No tienes cuenta? Regístrate</a>
+                <p @click="insertRoute('register')" class="text-subtitle-1">¿No tienes cuenta? Regístrate</p>
                 <!-- Button Container -->
                 <v-container style="text-align: center; margin-top: 1rem;">
                     <!-- Button Login -->
@@ -58,7 +58,22 @@ export default {
                 .catch(error => {
                     this.mensaje = 'Inicio de sesión fallido' + error.message;
                 })
-        }
+        },
+        insertRoute(route){
+                this.$router.push(`${route}`);
+            },
     }
 }
 </script>
+
+<style scoped>
+
+    p {
+        color: #8E24AA
+    }
+
+    p:hover {
+        color: #E040FB;
+        cursor: pointer;
+    }
+</style>
