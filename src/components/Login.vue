@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         iniciarSesion() {
-            fetch('/login', {
+            fetch('http://127.0.0.1:8000/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -49,8 +49,13 @@ export default {
             })
                 .then(response => {
                     if (response.ok) {
-                        this.mensaje = 'Inicio de sesión exitoso';
-                        // redirigir al usuario a la página principal
+                        response.json().then(data => {
+                            // Guardar el JSON en sesión
+                            data.password = this.password;
+                            localStorage.setItem('userData', JSON.stringify(data));
+                            // Redirigir al usuario a la página principal
+                            window.location.href = '/profile';
+                        });
                     } else {
                         this.mensaje = 'Inicio de sesión fallido';
                     }
