@@ -17,7 +17,7 @@
                 v-for="(item, index) in items"
                 :key="index"
             >
-                <v-btn class="text-capitalize" variant="plain">{{ item.title }}</v-btn>
+                <v-btn class="text-capitalize" variant="plain" @click="insertRoute(item.nombre)">{{ item.nombre }}</v-btn>
             </v-list-item>
         </v-list>
     </v-menu>
@@ -26,13 +26,22 @@
 <script>
     export default {
         data:() => ({
-            items: [
-                {title: "Terror"},
-                {title: "C. Ficción"},
-                {title: "Fantasía"},
-                {title: "Cocina"},
-                {title: "Filosofia"}
-            ]
-        })
+            items: null
+        }),
+        methods: {
+            insertRoute(name){
+                this.$router.push({path:`/category/${name}`});
+            },
+            async dataBookCategoryFetch() {
+                const URL = 'http://127.0.0.1:8000/category/'
+                const bookCategoryFetch = await fetch(`${URL}`);
+                const res = await bookCategoryFetch.json();
+                this.items = res.results;
+                return this.items;
+            }
+        },
+        async mounted() {
+            await this.dataBookCategoryFetch();
+        }, 
     }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <CategoryComponent />
+    <CategoryComponent :category="dataBookFetch(this.$route.params.name, 1)"/>
 </template>
 
 <script setup>

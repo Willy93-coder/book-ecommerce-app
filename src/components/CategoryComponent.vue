@@ -4,7 +4,7 @@
         <div class="pagination__component-top">
             <!-- Previous page -->
             <button @click="decrementPage"> Prev </button>
-            {{ this.page }}
+            {{ page }}
             <!-- Next page -->
             <button @click="incrementPage"> Next </button>
         </div>
@@ -44,7 +44,7 @@
         <div class="pagination__component-bottom">
             <!-- Previous page -->
             <button @click="decrementPage"> Prev </button>
-            {{ this.page }}
+            {{ page }}
             <!-- Next page -->
             <button @click="incrementPage"> Next </button>
         </div>
@@ -53,31 +53,35 @@
 
 <script>
 export default {
+        data:() => ({
+            books: null
+        }),
         props: {
             page: {
                 type: Number,
                 default: 1,
             },
             category: {
-                type: Object,
+                type: Promise,
             }
         },
         methods: {
             insertRoute(id){
                 this.$router.push(`book/${id}`);
             },
-            async incrementPage() {
+            incrementPage() {
                 if (this.nextPage != null) {
                     this.page ++
-                    await this.dataBookFetch();
                 }
             },
-            async decrementPage() {
+            decrementPage() {
                 if (this.page > 1) {
                     this.page --
-                    await this.dataBookFetch();
                 }
             },
+        },
+        async beforeUpdate() {
+            this.books = await this.category;
         }
     }
 </script>
