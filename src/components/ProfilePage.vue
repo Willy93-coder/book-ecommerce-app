@@ -1,10 +1,10 @@
 <template>
     <v-container class="d-flex flex-column justify-center align-center" style="max-width: 64rem;">
         <v-form>
-            <v-text-field label="Nombre" v-model="user.nombre" class="ancho"></v-text-field>
-            <v-text-field label="Primer apellido" v-model="user.apellido1" class="ancho"></v-text-field>
-            <v-text-field label="Segundo apellido" v-model="user.apellido2" class="ancho"></v-text-field>
-            <v-text-field label="Dirección" v-model="user.direccion" class="ancho"></v-text-field>
+            <v-text-field label="Nombre" v-model="user.first_name" class="ancho"></v-text-field>
+            <v-text-field label="Primer apellido" v-model="user.last_name" class="ancho"></v-text-field>
+            <v-text-field label="Email" v-model="user.email" class="ancho"></v-text-field>
+            <v-text-field label="Dirección" v-model="user.address" class="ancho"></v-text-field>
             <v-btn @click="guardarCambios">Guardar cambios</v-btn>
         </v-form>
         {{ mensaje }}
@@ -15,30 +15,32 @@ export default {
   data() {
     return {
       user: {
-        nombre: '',
-        apellido1: '',
-        apellido2: '',
-        direccion: ''
+        id: '',
+        first_name: '',
+        last_name: '',
+        email: '',
+        address: '',
+        password: '',
       },
       mensaje: ''
     }
   },
   mounted() {
-    fetch('/perfil')
-      .then(response => response.json())
-      .then(data => {
-        this.user = data;
-      })
-      .catch(error => {
-        console.log('Error al cargar información del usuario', error);
-      });
+    const userDataStr = localStorage.getItem('userData');
+    if (userDataStr) {
+      const userData = JSON.parse(userDataStr);
+      this.user = userData;
+    } else {
+      window.location.href = '/login';
+    }
   },
   methods: {
     guardarCambios() {
-      fetch('/perfil', {
+      fetch(`http://127.0.0.1:8000/user/${this.user.id}/`, {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Basic ${btoa(`${this.user.email}:${this.user.password}`)}`
         },
         body: JSON.stringify(this.user)
       })

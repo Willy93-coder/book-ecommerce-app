@@ -8,8 +8,7 @@
             <!-- Dropdown Libros -->
             <BookDropdown />
             <!-- Link Nosotros -->
-            <v-btn class="text-capitalize" variant="plain">Nosotros</v-btn>
-            <!-- Buscador -->
+            <v-btn class="text-capitalize" id="nosotros-btn" variant="plain" @click="scrollToBottom">Nosotros</v-btn>            <!-- Buscador -->
             <Searcher />
             <!-- Dropdown login -->
             <UserDropdownOut />
@@ -34,6 +33,12 @@
         methods: {
             insertRoute(route){
                 this.$router.push(route);
+            },
+            scrollToBottom() {
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth'
+                });
             }
         }
     }
