@@ -26,7 +26,7 @@
             <div>
                 <!-- Precio -->
                 <p class="text-h4 font-weight-bold">{{ book.precio_unitario }}</p>
-                    <AddToCart />
+                    <AddToCart :book=book />
             </div>
         </div>
     </v-container>

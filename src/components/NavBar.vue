@@ -13,7 +13,7 @@
             <!-- Dropdown login -->
             <UserDropdownOut />
             <!-- Link Carrito -->
-            <v-btn variant="plain" icon="shopping_cart" @click="insertRoute('/cart')"></v-btn>
+            <CartView />
         </v-container>
     </v-app-bar>
 </template>
@@ -22,6 +22,7 @@
     import BookDropdown from './BookDropdown.vue';
     import UserDropdownOut from './UserDropdownOut.vue';
     import Searcher from './Searcher.vue';
+    import CartView from './CartComponent.vue';
 
     export default {
         name: 'NavBar',
@@ -29,6 +30,7 @@
             BookDropdown,
             UserDropdownOut,
             Searcher,
+            CartView,
         },
         methods: {
             insertRoute(route){
