@@ -6,7 +6,7 @@
   
       <v-list variant="plain">
         <v-list-item v-for="(item, index) in menuOptions" :key="index">
-          <v-btn variant="plain" @click="item.action">{{ item.title }}</v-btn>
+          <v-btn variant="plain" @click="item.action" class="capitalize">{{ item.title }}</v-btn>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -53,3 +53,9 @@
     },
   };
   </script>
+
+<style scoped>
+  .capitalize {
+    text-transform: capitalize;
+  }
+</style>

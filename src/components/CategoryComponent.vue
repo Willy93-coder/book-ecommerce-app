@@ -31,7 +31,7 @@
                 <v-divider class="mx-3"></v-divider>
                 <!-- Descripción -->
                 <v-card-text>
-                    {{ book.descripcion }}
+                    <p class="text">{{ book.descripcion }}</p>
                 </v-card-text>
                 <div class="mx-4 mb-4 d-flex justify-space-between align-center">
                     <!-- Precio -->
@@ -103,5 +103,12 @@ export default {
         display: flex;
         justify-content: center;
         column-gap: 1rem;
+    }
+
+    .text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 </style>
