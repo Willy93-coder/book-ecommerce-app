@@ -34,6 +34,9 @@
 <script>
 import Product2Buttons from './Product2Buttons.vue'
 export default {
+    props: {
+        book: Object,
+    },
     data() {
         return {
             cantidad: 1,
@@ -54,31 +57,16 @@ export default {
             }
         },
         enviar() {
-            console.log("Antes de validar el 0")
-            if (this.cantidad > 0) {
-                fetch('/carrito', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        cantidad: this.cantidad
-                    })
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            this.mensaje = 'Producto añadido con éxito.' + this.cantidad;
-                        } else {
-                            this.mensaje = 'No se pudo agregar el producto.';
-                        }
-                    })
-                    .catch(error => {
-                        this.mensaje = 'Hubo un error inesperado, vuelva a intentarlo.';
-                    });
-                this.result = false;
-            } else {
-                this.mensaje = 'La cantidad mínima es 1.';
-            }
+            var cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            cartItems.push({
+                id: this.book.id,
+                name: this.book.titulo,
+                image: this.book.imagen,
+                quantity: this.cantidad,
+                price: this.cantidad * this.book.precio_unitario,
+            });
+            localStorage.setItem("cartItems", JSON.stringify(cartItems))
+            window.location.href = '/';
         }
     }
 };
